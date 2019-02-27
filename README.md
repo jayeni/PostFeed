@@ -1,5 +1,5 @@
 # PostFeed
-<b>Project Description:</b> a single screen app the replicates a Post feed that is scrollable 
+<b>Project Description:</b> a single screen app the replicates a scrollable Post feed  
 
 <b>Features:</b><br>
 * The feed data comes from a jsons file<br>
