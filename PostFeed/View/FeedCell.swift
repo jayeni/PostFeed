@@ -16,7 +16,9 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var likesView: UILabel!
     @IBOutlet weak var dateView: UILabel!
     @IBOutlet weak var descriptionView: UILabel!
+    
     @IBAction func likeButton(_ sender: UIButton) {
+        //when a like button is  pressed it changes to show that its pressesed and vice-versa  
         if sender.currentImage == UIImage(named: "like-on"){
             sender.setImage(UIImage(named: "like-off"), for: .normal)
         }
@@ -29,9 +31,11 @@ class FeedCell: UITableViewCell {
     
     func setView(post:Post) {
         super.layoutSubviews()
+        //grabbing images from a given url
         setupImage(image: post.postURL ,pic: postView)
         setupImage(image: post.user?.avatarURL , pic: avatarView)
         
+        //making the avatar image round
         avatarView.layer.cornerRadius = avatarView.bounds.width / 2
         avatarView.contentMode = .scaleAspectFill
         avatarView.clipsToBounds = true
@@ -59,6 +63,7 @@ class FeedCell: UITableViewCell {
                     return
                 }
                 DispatchQueue.main.async {
+                    //uploads image as soon as it receive it
                     pic.image = UIImage(data: data!)
                 }
                 

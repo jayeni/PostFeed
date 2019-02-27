@@ -25,13 +25,15 @@ class Post: NSObject {
         likeCount = json["likeCount"] as? Int
         user = User(json: json["user"] as! [String : Any])
         
-        
+        //finding diffrence between when a post to posted and current dat
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.locale = Locale.current
         let d = dateFormatter.date(from:  json["created"] as! String )
-        let  dateSECONDS = Date().timeIntervalSince(d!)
+        //determining which term fits best by how big a number is
+        
+        let dateSECONDS = Date().timeIntervalSince(d!)
         let dateMINS = dateSECONDS/60
         let dateHOURS = dateMINS/60
         let dateDAYS = dateHOURS/24
@@ -59,10 +61,8 @@ class Post: NSObject {
         }
         else{
             createdDate = String( Int(dateYEARS) ) + " YEARS AGO"
-            
         }
-        
-        
+ 
     }
  
     

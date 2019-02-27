@@ -15,6 +15,7 @@ class TableViewController: UITableViewController {
         func parseJson(){
         
         self.postArr = [Post]()
+        //grabs json file from url
         let url = URL(string: "https://api.myjson.com/bins/f8xry")!
         URLSession.shared.dataTask(with: url) { data , reposnse, error in
             guard data != nil else {return}
@@ -26,6 +27,7 @@ class TableViewController: UITableViewController {
                     if let dict = dictionary["posts"] as? [Any]
                     {
                         for i in 0..<dict.count {
+                            //stores each instances in the postarr
                             let post = Post(json: dict[i] as! [String : Any])
                             self.postArr?.append(post)
                         }
@@ -33,6 +35,7 @@ class TableViewController: UITableViewController {
                 }
                 
                 DispatchQueue.main.async {
+                    //loads data if not loaded yet
                     self.tableView?.reloadData()
                 }
                 
@@ -44,13 +47,12 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      parseJson()
+        parseJson()
+        //only shows available cells
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        //gets rid of border between cells
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-    
-        
-        
-      
+
     }
     
     
@@ -61,8 +63,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "feed") as! FeedCell
         cell.setView(post: postArr![indexPath.row] )
-        
-        
+
         return cell
     }
     

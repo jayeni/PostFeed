@@ -59,7 +59,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="jPa-Oh-rLM" secondAttribute="height" multiplier="1:1" id="eJK-up-j3N"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="like-on"/>
+                                            <state key="normal" title="Button" image="like-off"/>
                                             <connections>
                                                 <action selector="likeButton:" destination="IKw-En-0DI" eventType="touchUpInside" id="mph-SY-Qaf"/>
                                             </connections>
@@ -119,6 +119,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="like-on" width="384" height="384"/>
+        <image name="like-off" width="384" height="384"/>
     </resources>
 </document>
