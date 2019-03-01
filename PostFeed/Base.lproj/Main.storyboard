@@ -151,7 +151,6 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="AF0-G9-fTx" firstAttribute="width" secondItem="gwO-JZ-2q2" secondAttribute="width" id="0rg-Va-D3q"/>
                                         <constraint firstItem="bBC-xe-UZN" firstAttribute="leading" secondItem="gwO-JZ-2q2" secondAttribute="leading" constant="12" id="3OW-qP-1uw"/>
                                         <constraint firstItem="Olw-Fc-1nM" firstAttribute="top" secondItem="JkB-0X-ren" secondAttribute="bottom" constant="2" id="8rL-tN-Bou"/>
                                         <constraint firstItem="JkB-0X-ren" firstAttribute="top" secondItem="N2G-zJ-DS8" secondAttribute="bottom" constant="5" id="Lli-z0-uju"/>
@@ -162,6 +161,7 @@
                                         <constraint firstItem="N2G-zJ-DS8" firstAttribute="leading" secondItem="gwO-JZ-2q2" secondAttribute="leading" constant="12" id="XBm-iW-geK"/>
                                         <constraint firstAttribute="trailing" secondItem="bBC-xe-UZN" secondAttribute="trailing" constant="12" id="gRk-ii-kth"/>
                                         <constraint firstItem="bBC-xe-UZN" firstAttribute="top" secondItem="YHT-pe-Vt6" secondAttribute="bottom" id="l2V-0C-vUJ"/>
+                                        <constraint firstItem="AF0-G9-fTx" firstAttribute="width" secondItem="gwO-JZ-2q2" secondAttribute="width" id="m7V-WD-wdd"/>
                                         <constraint firstItem="N2G-zJ-DS8" firstAttribute="width" secondItem="gwO-JZ-2q2" secondAttribute="width" multiplier="0.06" id="oCn-VA-t0K"/>
                                         <constraint firstItem="YHT-pe-Vt6" firstAttribute="leading" secondItem="gwO-JZ-2q2" secondAttribute="leading" constant="12" id="r1a-Ax-O4w"/>
                                         <constraint firstAttribute="bottom" secondItem="Olw-Fc-1nM" secondAttribute="bottom" constant="2" id="vDR-Vp-Zbr"/>

@@ -47,7 +47,7 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.randomNum =  Int.random(in: 0 ... 1)
+        self.randomNum =  Int.random(in: 1 ... 10)
         parseJson()
         //only shows available cells
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -62,8 +62,8 @@ class TableViewController: UITableViewController {
         return postArr?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if randomNum == 0{
+ 
+        if randomNum! < 6{
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "feed") as! FeedCell
             cell.setView(post: postArr![indexPath.row])
             return cell
