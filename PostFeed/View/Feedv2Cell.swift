@@ -42,12 +42,11 @@ class FeedCellV2: UITableViewCell {
         let url2 = URL(string: (post.user?.avatarURL)!)
         let data2 = try? Data(contentsOf: url2!)
         avatarView.image = UIImage(data: data2!)
-        /*
+        
         let ratio = Float((postView.image?.size.height)!) / Float((postView.image?.size.width)!)
         let newHeight = Float(UIScreen.main.bounds.width) * ratio
         postView.heightAnchor.constraint(equalToConstant: CGFloat(newHeight)).isActive = true
-        */
-        postView.autoresizesSubviews = true
+ 
         
         
         
