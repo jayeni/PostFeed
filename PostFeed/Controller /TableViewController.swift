@@ -11,7 +11,8 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var postArr:[Post]?
-
+    //random number for which table cell to use 50/50
+    var randomNum:Int?
         func parseJson(){
         
         self.postArr = [Post]()
@@ -46,7 +47,7 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        self.randomNum =  Int.random(in: 0 ... 1)
         parseJson()
         //only shows available cells
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -61,10 +62,19 @@ class TableViewController: UITableViewController {
         return postArr?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "feed") as! FeedCell
-        cell.setView(post: postArr![indexPath.row] )
-
-        return cell
+        
+        if randomNum == 0{
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "feed") as! FeedCell
+            cell.setView(post: postArr![indexPath.row])
+            return cell
+        }
+        else{
+             let cell = self.tableView.dequeueReusableCell(withIdentifier: "feedv2") as! FeedCellV2
+            cell.setView(post: postArr![indexPath.row])
+            return cell
+            
+        }
+    
     }
     
 

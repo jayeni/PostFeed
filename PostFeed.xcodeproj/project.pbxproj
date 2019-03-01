@@ -15,6 +15,7 @@
 		8502613422229097005310FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8502613322229097005310FE /* User.swift */; };
 		85026138222530C1005310FE /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85026137222530C1005310FE /* FeedCell.swift */; };
 		8540A19C2226242B00C89D39 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540A19B2226242B00C89D39 /* TableViewController.swift */; };
+		856A754022289836008A4DAA /* Feedv2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856A753F22289836008A4DAA /* Feedv2Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8502613322229097005310FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		85026137222530C1005310FE /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		8540A19B2226242B00C89D39 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		856A753F22289836008A4DAA /* Feedv2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedv2Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +67,8 @@
 				8515A694222628BD00552799 /* Controller  */,
 				8502611F2221F89F005310FE /* AppDelegate.swift */,
 				850261232221F89F005310FE /* Main.storyboard */,
-				850261262221F8A1005310FE /* Assets.xcassets */,
 				850261282221F8A1005310FE /* LaunchScreen.storyboard */,
+				850261262221F8A1005310FE /* Assets.xcassets */,
 				8502612B2221F8A1005310FE /* Info.plist */,
 			);
 			path = PostFeed;
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				85026137222530C1005310FE /* FeedCell.swift */,
+				856A753F22289836008A4DAA /* Feedv2Cell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				850261202221F89F005310FE /* AppDelegate.swift in Sources */,
 				8540A19C2226242B00C89D39 /* TableViewController.swift in Sources */,
 				85026138222530C1005310FE /* FeedCell.swift in Sources */,
+				856A754022289836008A4DAA /* Feedv2Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,29 +1,29 @@
 //
-//  FeedCell.swift
+//  Feedv2Cell.swift
 //  PostFeed
 //
-//  Created by Jeremiah Ayeni on 2/26/19.
+//  Created by Jeremiah Ayeni on 2/28/19.
 //  Copyright © 2019 Jeremiah Ayeni. All rights reserved.
 //
 
 import UIKit
 
-class FeedCell: UITableViewCell {
-    
+class FeedCellV2: UITableViewCell {
     @IBOutlet weak var avatarView: UIImageView!
-    @IBOutlet weak var postView: UIImageView!
-    @IBOutlet weak var usernameView: UILabel!
-    @IBOutlet weak var likesView: UILabel!
-    @IBOutlet weak var dateView: UILabel!
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var descriptionView: UILabel!
+    @IBOutlet weak var postView: UIImageView!
+    @IBOutlet weak var likeView: UILabel!
+    @IBOutlet weak var dateView: UILabel!
+    
     
     @IBAction func likeButton(_ sender: UIButton) {
-        //when a like button is  pressed it changes to show that its pressesed and vice-versa  
+        //when a like button is  pressed it changes to show that its pressesed and vice-versa
         if sender.currentImage == UIImage(named: "like-on"){
             sender.setImage(UIImage(named: "like-off"), for: .normal)
         }
         else{
-             sender.setImage(UIImage(named: "like-on"), for: .normal)
+            sender.setImage(UIImage(named: "like-on"), for: .normal)
         }
         
     }
@@ -36,15 +36,20 @@ class FeedCell: UITableViewCell {
         let data = try? Data(contentsOf: url!)
         postView.image = UIImage(data: data!)
         
+     
+                
+                
         let url2 = URL(string: (post.user?.avatarURL)!)
         let data2 = try? Data(contentsOf: url2!)
         avatarView.image = UIImage(data: data2!)
         
-        
         let ratio = Float((postView.image?.size.height)!) / Float((postView.image?.size.width)!)
         postView.heightAnchor.constraint(equalTo: postView.widthAnchor, multiplier:CGFloat( ratio) ) .isActive = true
-       
-     
+        
+    
+        
+        
+        
         
         //making the avatar image round
         avatarView.layer.cornerRadius = avatarView.bounds.width / 2
@@ -52,38 +57,15 @@ class FeedCell: UITableViewCell {
         avatarView.clipsToBounds = true
         
         
-
+        
         dateView.text = post.createdDate
-        usernameView.text = post.user?.name
+        userName.text = post.user?.name
         descriptionView.text = post.descripTxt
         descriptionView.numberOfLines = 0
         
-        likesView.text = String(post.likeCount!) + " likes"
-
+        likeView.text = String(post.likeCount!) + " likes"
         
-    }
-    
-    
-    func setupImage(image: String?,pic: UIImageView){
-        if let imageurl = image{
-            
-            let url = URL(string: imageurl)
-            
-            URLSession.shared.dataTask(with: url!){ (data, response, error) in
-                
-                if error != nil {
-                    return
-                }
-                DispatchQueue.main.async {
-                    //uploads image as soon as it receive it
-                    pic.image = UIImage(data: data!)
-                }
-                
-                
-                }.resume()
-            
-            
-        }
+        
     }
     
     
